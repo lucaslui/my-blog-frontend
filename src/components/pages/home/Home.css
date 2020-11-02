@@ -1,0 +1,13 @@
+.home > .home-image {
+    background-attachment: scroll;
+    background-color: #151414;
+    background-size: cover;
+    height: 25.5vw;
+    max-height: 75vh;
+    min-height: 200px;
+    width: 100%;    
+}
+
+main > h3.title {
+    color: #999999;
+}

@@ -1,0 +1,19 @@
+* {
+    font-family: 'Roboto', sans-serif, Arial, Tahoma, Helvetica;
+}
+
+body {
+    margin: 0;
+}
+
+.app {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 60px 1fr 40px;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: "menu header" "menu content" "menu footer";
+}
+
+.app.hide-sidebar {
+    grid-template-areas: "header header" "content content" "footer footer";
+}
