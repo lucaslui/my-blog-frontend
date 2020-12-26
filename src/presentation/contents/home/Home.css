@@ -1,10 +1,7 @@
 .home > .home-image {
     background-attachment: scroll;
-    background-color: #151414;
     background-size: cover;
-    height: 25.5vw;
-    max-height: 75vh;
-    min-height: 200px;
+    height: 16vw;
     width: 100%;    
 }
 

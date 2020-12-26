@@ -1,59 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react'
 
-import { Route, Switch, Redirect } from "react-router-dom";
-
-import Header from './components/template/Header'
-import Sidebar from './components/template/Sidebar'
-import Content from './components/template/Content'
-import Footer from './components/template/Footer'
-
-import routes from "./configs/routes.js";
+import Header from './presentation/layout/header/Header'
+import Sidebar from './presentation/layout/sidebar/Sidebar'
+import Footer from './presentation/layout/footer/Footer'
+import Content from './presentation/layout/content/Content'
 
 import './App.css'
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sidebarOpened: true
-    };
-  }
+export default function App() {
 
-  getRoutes = routes => {
-    return routes.map((prop, key) => {
-      if (prop.layout === "/main") {
-        return (
-          <Route
-            path={prop.layout + prop.path}
-            component={prop.component}
-            key={key}
-          />
-        );
-      } else {
-        return null;
-      }
-    });
+  const [sidebarOpened, setSidebarOpened] = useState(false);
+
+  function toggleSidebar() {
+    setSidebarOpened(!sidebarOpened);
   };
-
-  toggleSidebar = () => {
-    this.setState({ sidebarOpened: !this.state.sidebarOpened });
-  };
-
-  render() {
-    return (
-      <div className={this.state.sidebarOpened ? "app" : "app hide-sidebar"}>
-        <Header toggleSidebar={this.toggleSidebar} sidebarOpened={this.state.sidebarOpened}/>
-        <Sidebar sidebarOpened={this.state.sidebarOpened}/> 
-        <Content>
-          <Switch>
-            {this.getRoutes(routes)}
-            <Redirect from="*" to="/main/home" />
-          </Switch>
-        </Content>
-        <Footer/> 
-      </div >
-    );
-  }
+  
+  return (   
+    <div className="container">
+      <Header toggleSidebar={toggleSidebar} sidebarOpened={sidebarOpened} />
+      <Sidebar toggleSidebar={toggleSidebar} sidebarOpened={sidebarOpened} />
+      <Content/>          
+      <Footer/>
+    </div >
+  )
 }
-
-export default App;
