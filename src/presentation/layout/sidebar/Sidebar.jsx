@@ -10,31 +10,35 @@ export default function Sidebar(props) {
         <i className="fas fa-angle-double-left" />
       </button>
       <div className="profile">
-        <a href="/perfil"> <img src={Profile} alt="Profile" /> </a>
+        <a href={process.env.PUBLIC_URL + '/perfil'}> <img src={Profile} alt="Profile" /> </a>
         <span> Lucas Lui Motta </span>
-        <a href="/perfil" rel="author"> Visitar Perfil </a>
+        <a href={process.env.PUBLIC_URL + '/perfil'} rel="author"> Visitar Perfil </a>
       </div>
       <nav className="menu">
         <hr />
+        <span> Introdução </span>
+        <ul>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Do que se trata? </a> </li>
+        </ul>
+        <hr />
         <span> Internet das Coisas </span>
         <ul>
-          <li> <a href={`/embarcados`}> Do que se trata? </a> </li>
-          <li> <a href={`/embarcados`}> Quais são as possibilidades? </a> </li>
-          <li> <a href={`/embarcados`}> Como começar? </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Arquiteturas </a> </li>
         </ul>
         <hr />
         <span> Desenvolvimento de Sofware </span>
         <ul>
-          <li> <a href={`/embarcados`}> Arquitetura de Software </a> </li>
-          <li> <a href={`/embarcados`}> Design de Software </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Arquitetura de Software </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Linguagem Javascript e Python </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Design de Software </a> </li>
         </ul>
         <hr />
         <span> Sistemas Embarcados </span>
         <ul>
-          <li> <a href={`/embarcados`}> Hardware e Software </a> </li>
-          <li> <a href={`/embarcados`}> Linguagem C e C++ </a> </li>
-          <li> <a href={`/embarcados`}> Controlando Periféricos </a> </li>
-          <li> <a href={`/embarcados`}> Processo de Depuração </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Hardware e Software </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Linguagem C e C++ </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Controlando Periféricos </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Processo de Depuração </a> </li>
         </ul>
       </nav>
     </aside>

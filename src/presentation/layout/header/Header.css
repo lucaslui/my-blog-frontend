@@ -2,38 +2,34 @@
   grid-area: header;
   background-color: var(--background-secondary-color);
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
 }
 
-.header .title h1 {
+.header h1 {
   font-family: "Indie Flower";
   font-size: 1.38rem;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--primary-color);
-  flex-grow: 1;
   margin-top: 10px;
   margin-bottom: 4px;
 }
 
-.header .title h2 {
+.header h2 {
   font-family: "Indie Flower";
   font-size: 1.36rem;
   font-weight: 300;
   color: var(--disabled-color);
-  flex-grow: 1;
   margin-top: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .nav-links {
   margin-bottom: 16px;
-}
-
-.nav-links .toggle,
-.nav-links .search-inside {
-  display: none;
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-links ul {
@@ -41,6 +37,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
 }
 
 .nav-links li {
@@ -48,8 +45,10 @@
 }
 
 .nav-links a {
+  display: block;
   color: var(--secondary-color);
   text-decoration: none;
+  text-align: center;
 }
 
 .nav-links a:hover,
@@ -57,80 +56,67 @@
   color: var(--primary-color);
 }
 
-.header .spacer {
+.nav-links .spacer {
   flex: 1;
 }
 
-.header .search-outside {
+.nav-links li button {
+  display: block;
   border: none;
   outline: none;
   background: none;
-  padding: 12px 16px;
-  font-size: 1.5rem;
   cursor: pointer;
-}
-
-.header .search-outside i {
-  color: var(--primary-color);
-}
-
-.header .search-outside:hover i {
   color: var(--secondary-color);
 }
 
-@media only screen and (max-width: 820px) {
+.nav-links .search {
+  position: relative;
+}
+
+.nav-links .search i {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  color: var(--secondary-color);
+}
+
+.nav-links .search input {
+  background-color: #333861;
+  border: none;
+  outline: none;
+  padding: 4px 2px;
+  padding-left: 32px;
+  color: var(--primary-color);
+}
+
+.nav-links .search input:focus,
+.nav-links .search input:active {
+  box-shadow: none;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 932px) {
   .header {
-    padding: 20px;
+    padding: 16px;
   }
 
-  .header .title h1 {
+  .header h1 {
     font-size: 1.32rem;
   }
 
-  .header .title h2 {
+  .header h2 {
     font-size: 1.1rem;
   }
-  
-  .search-outside {
+
+  .desktop {
     display: none;
   }
 
-  .nav-links {
+  .mobile {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     margin-bottom: 0;
-  }
-
-  .nav-links .toggle {
-    display: block;
-    padding: 0px 8px;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
-    color: var(--primary-color);
-  }
-
-  .nav-links .toggle i {
-    font-size: 32px;
-  }
- 
-  .nav-links .search-inside {
-    display: contents;
-    border: none;
-    outline: none;
-    background: none;
-    padding: 12px 16px;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  .nav-links .search-inside i {
-    color: var(--primary-color);
-  }
-
-  .nav-links .search-inside:hover i {
-    color: var(--secondary-color);
   }
 }
