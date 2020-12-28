@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Profile from '../../assets/imgs/profile.png'
 import './Sidebar.css'
+
+import Profile from '../../assets/imgs/profile.png'
 
 export default function Sidebar(props) {
   return (
@@ -12,7 +13,7 @@ export default function Sidebar(props) {
       <div className="profile">
         <a href={process.env.PUBLIC_URL + '/perfil'}> <img src={Profile} alt="Profile" /> </a>
         <span> Lucas Lui Motta </span>
-        <a href={process.env.PUBLIC_URL + '/perfil'} rel="author"> Visitar Perfil </a>
+        <a href={process.env.PUBLIC_URL + '/perfil'}> Visitar Perfil </a>
       </div>
       <nav className="menu">
         <hr />
