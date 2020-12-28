@@ -19,7 +19,7 @@ export default function Sidebar(props) {
         <span> Internet das Coisas </span>
         <ul>
           <li> <a href={`/embarcados`}> Do que se trata? </a> </li>
-          <li> <a href={`/embarcados`}> Quais são possibilidades? </a> </li>
+          <li> <a href={`/embarcados`}> Quais são as possibilidades? </a> </li>
           <li> <a href={`/embarcados`}> Como começar? </a> </li>
         </ul>
         <hr />
