@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "./Header.css";
 
@@ -7,25 +6,24 @@ export default function Header(props) {
   return (
     <header className="header">
       <div className="title">
-        <h1> Espaço de conhecimento em internet das coisas </h1>
+        <h1> Espaço de Conhecimento em IoT </h1>
         <h2>
-          Tendo como lema o ensino de projetos em internet das coisas de forma
+          Tendo como objetivo o ensino de projetos em Internet das Coisas de forma
           simples, prática e objetiva.
         </h2>
         <nav className="nav-links">
-          <button onClick={props.toggleSidebar}>
-            <i class="fas fa-bars"></i>
+          <button className="toggle" onClick={props.toggleSidebar}>
+            <i className="fas fa-angle-double-right" />
           </button>
           <ul>
-            <li> <Link to="/embarcados"> Projetos Básicos </Link> </li>
-            <li> <Link to="/main/admin"> Projetos Intermidários </Link> </li>
-            <li> <Link to="/main/admin"> Projetos Complexos </Link> </li>
-            <li>
-              <button className="search-inside" onClick={props.toggleSidebar}>
-                <i className="fas fa-search"></i>
-              </button>
-            </li>
+            <li> <a href="/home"> Página Inicial </a> </li>
+            <li> <a href="/embarcados"> Projetos Básicos </a> </li>
+            <li> <a href="/main/admin"> Projetos Intermidários </a> </li>
+            <li> <a href="/main/admin"> Projetos Complexos </a> </li>
           </ul>
+          <button className="search-inside" onClick={props.toggleSidebar}>
+            <i className="fas fa-search"></i>
+          </button>
         </nav>
       </div>
       <div className="spacer"></div>

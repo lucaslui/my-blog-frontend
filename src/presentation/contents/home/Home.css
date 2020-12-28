@@ -1,10 +1,10 @@
-.home > .home-image {
+.home > img{
     background-attachment: scroll;
     background-size: cover;
     height: 16vw;
-    width: 100%;    
+    width: 100%;  
 }
 
-main > h3.title {
+.home .posts h3 {
     color: #999999;
 }

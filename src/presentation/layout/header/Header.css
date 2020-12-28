@@ -14,7 +14,7 @@
   color: var(--primary-color);
   flex-grow: 1;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .header .title h2 {
@@ -23,7 +23,11 @@
   font-weight: 300;
   color: var(--disabled-color);
   flex-grow: 1;
-  margin-top: 5px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.nav-links {
   margin-bottom: 16px;
 }
 
@@ -37,7 +41,6 @@
   margin: 0;
   padding: 0;
   display: flex;
-  margin-bottom: 16px;
 }
 
 .nav-links li {
@@ -79,32 +82,40 @@
   .header {
     padding: 20px;
   }
+
+  .header .title h1 {
+    font-size: 1.32rem;
+  }
+
+  .header .title h2 {
+    font-size: 1.1rem;
+  }
   
   .search-outside {
     display: none;
   }
 
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
   .nav-links .toggle {
-    width: 60px;
-    height: 100%;
-    padding: 0;
+    display: block;
+    padding: 0px 8px;
     border: none;
     outline: none;
     background: none;
-    font-size: 25px;
     cursor: pointer;
     color: var(--primary-color);
-    justify-self: flex-start;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
-  .nav-links .toggle:hover {
-    background-color: rgba(121, 118, 118, 0.356);
+  .nav-links .toggle i {
+    font-size: 32px;
   }
-
-  
+ 
   .nav-links .search-inside {
     display: contents;
     border: none;
