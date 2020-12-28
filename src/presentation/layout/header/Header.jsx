@@ -10,40 +10,40 @@ export default function Header(props) {
         Tendo como objetivo o ensino de projetos em Internet das Coisas de forma
         simples, prática e objetiva.
       </h2>
-      <nav className="nav-links desktop">
+      <nav className="navbar desktop">
         <ul>
           <li>
             <a href={process.env.PUBLIC_URL + '/home'}>
-              <i className="fas fa-home" />
+              {/* <i className="fas fa-home" /> */}
               <span> Página Inicial </span>
             </a>
           </li>
           <li>
             <a href={process.env.PUBLIC_URL + '/embarcados'}>
-              <i className="fas fa-chess-pawn" />
+              {/* <i className="fas fa-chess-pawn" /> */}
               <span> Projetos Básicos </span>
             </a>
           </li>
           <li>
             <a href={process.env.PUBLIC_URL + '/embarcados'}>
-              <i className="fas fa-chess-knight" />
+              {/* <i className="fas fa-chess-knight" /> */}
               <span> Projetos Intermediários </span>
             </a>
           </li>
           <li>
             <a href={process.env.PUBLIC_URL + '/embarcados'}>
-              <i className="fas fa-chess-king" />
+              {/* <i className="fas fa-chess-king" /> */}
               <span> Projetos Complexos </span>
             </a>
           </li>
         </ul>
-        <div className="spacer"></div>
+        <div className="spacer"/>
         <div className="search">
           <i className="fas fa-search"></i>
-          <input type="text" />
+          <input type="search" id="header-search" name="search"/>
         </div>
       </nav>
-      <nav className="nav-links mobile">
+      <nav className="navbar mobile">
         <ul>
           <li>
             <a href={process.env.PUBLIC_URL + '/home'}>

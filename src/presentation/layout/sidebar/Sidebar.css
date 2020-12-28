@@ -85,7 +85,7 @@
   text-align: left;
 }
 
-@media only screen and (max-width: 932px) {
+@media only screen and (max-width: 948px) {
   .sidebar {
     position: absolute;
     width: 280px;

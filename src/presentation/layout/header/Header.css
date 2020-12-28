@@ -13,7 +13,7 @@
   font-weight: 600;
   text-transform: uppercase;
   color: var(--primary-color);
-  margin-top: 10px;
+  margin-top: 16px;
   margin-bottom: 4px;
 }
 
@@ -26,13 +26,13 @@
   margin-bottom: 12px;
 }
 
-.nav-links {
-  margin-bottom: 16px;
+.header .navbar {
   display: flex;
   flex-direction: row;
+  margin-bottom: 16px;
 }
 
-.nav-links ul {
+.header .navbar ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -40,27 +40,27 @@
   align-items: center;
 }
 
-.nav-links li {
+.header .navbar li {
   padding-right: 1rem;
 }
 
-.nav-links a {
+.header .navbar a {
   display: block;
   color: var(--secondary-color);
   text-decoration: none;
   text-align: center;
 }
 
-.nav-links a:hover,
-.nav-links a:active {
+.header .navbar a:hover,
+.header .navbar a:active {
   color: var(--primary-color);
 }
 
-.nav-links .spacer {
+.header .navbar .spacer {
   flex: 1;
 }
 
-.nav-links li button {
+.header .navbar li button {
   display: block;
   border: none;
   outline: none;
@@ -69,53 +69,54 @@
   color: var(--secondary-color);
 }
 
-.nav-links .search {
+.header .navbar .search {
   position: relative;
+  padding-right: 20px;
 }
 
-.nav-links .search i {
+.header .navbar .search i {
   position: absolute;
   left: 8px;
   top: 6px;
   color: var(--secondary-color);
 }
 
-.nav-links .search input {
+.header .navbar .search input {
   background-color: #333861;
   border: none;
   outline: none;
-  padding: 4px 2px;
-  padding-left: 32px;
+  padding: 6px 2px 6px 32px;
   color: var(--primary-color);
 }
 
-.nav-links .search input:focus,
-.nav-links .search input:active {
+.header .navbar .search input:focus,
+.header .navbar .search input:active {
   box-shadow: none;
 }
 
-.mobile {
+.header .navbar.mobile {
   display: none;
 }
 
-@media only screen and (max-width: 932px) {
+@media only screen and (max-width: 948px) {
   .header {
     padding: 16px;
   }
 
   .header h1 {
     font-size: 1.32rem;
+    margin-top: 4px;
   }
 
   .header h2 {
     font-size: 1.1rem;
   }
 
-  .desktop {
+  .header .navbar.desktop {
     display: none;
   }
 
-  .mobile {
+  .header .navbar.mobile {
     display: flex;
     margin-bottom: 0;
   }

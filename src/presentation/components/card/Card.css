@@ -1,0 +1,22 @@
+.card {
+  border: 1px solid var(--disabled-color);
+  border-radius: 10px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card .title {
+  padding: 5px 0px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-color);
+}
+
+.card .content {
+  flex-grow: 1;
+  background-color: var(--primary-color);
+  color: #000;
+  padding: 10px;
+}

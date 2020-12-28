@@ -15,9 +15,10 @@
 
 body {
   background-color: var(--background-color);
-  color: var(--primary-color);  
+  color: var(--primary-color);
   margin: 0;
   padding: 0;
+  zoom: 1;
 }
 
 .container {
@@ -28,7 +29,7 @@ body {
   grid-template-areas: "sidebar header" "sidebar content" "sidebar footer";
 }
 
-@media only screen and (max-width: 932px) {
+@media only screen and (max-width: 948px) {
   .container {
     grid-template-rows: 1fr 5fr 40px;
     grid-template-columns: 1fr;
