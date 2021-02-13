@@ -1,9 +1,11 @@
 import React from 'react'
 
+import PageTitle from '../../components/page-title/PageTitle'
+
 export default function Embarcados() {
   return (
     <div className="embarcados">
-      <h1> Conteudo do Embarcados </h1>
+      <PageTitle title="Conteúdo Embarcados"></PageTitle>
     </div>
   )
 }

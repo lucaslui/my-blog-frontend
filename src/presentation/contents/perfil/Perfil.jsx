@@ -1,9 +1,11 @@
 import React from 'react'
 
+import PageTitle from '../../components/page-title/PageTitle'
+
 export default function Embarcados() {
   return (
     <div className="perfil">
-      <h1> Conteúdo do Perfil </h1>
+      <PageTitle title="Perfil do Autor"></PageTitle>
     </div>
   )
 }

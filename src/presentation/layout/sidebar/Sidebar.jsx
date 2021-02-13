@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Sidebar.css'
 
-import Profile from '../../assets/imgs/profile.png'
+// import Profile from '../../assets/imgs/profile.png'
 
 export default function Sidebar(props) {
   return (
@@ -11,7 +11,9 @@ export default function Sidebar(props) {
         <i className="fas fa-angle-double-left" />
       </button>
       <div className="profile">
-        <a href={process.env.PUBLIC_URL + '/perfil'}> <img src={Profile} alt="Profile" /> </a>
+        <a href={process.env.PUBLIC_URL + '/perfil'}> 
+          <div className="profile-image"/> 
+        </a>
         <span> Lucas Lui Motta </span>
         <a href={process.env.PUBLIC_URL + '/perfil'}> Visitar Perfil </a>
       </div>

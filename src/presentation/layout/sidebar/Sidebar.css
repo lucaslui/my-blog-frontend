@@ -3,7 +3,7 @@
   background-color: var(--background-secondary-color);
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   padding: 10px 10px;
 }
 
@@ -15,7 +15,7 @@
   background: none;
   box-shadow: none;
   cursor: pointer;
-  color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
 .sidebar .toggle i {
@@ -25,12 +25,21 @@
 .sidebar .profile {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   margin-top: 36px;
   margin-bottom: 20px;
 }
 
 .sidebar .profile img {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+}
+
+.sidebar .profile .profile-image {
+  background-image: url("../../assets/imgs/profile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 50%;
   height: 120px;
   width: 120px;
@@ -82,7 +91,7 @@
   text-align: left;
 }
 
-@media only screen and (max-width: 948px) {
+@media only screen and (max-width: 1096px) {
   .sidebar {
     position: absolute;
     width: 280px;

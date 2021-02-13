@@ -5,7 +5,6 @@ import Home from '../../contents/home/Home'
 import Embarcados from '../../contents/embarcados/Embarcados';
 import Perfil from '../../contents/perfil/Perfil';
 
-
 import './Content.css'
 
 export default function Content(props) {
@@ -13,10 +12,10 @@ export default function Content(props) {
     <main className="content">
       <Switch>
         <Route path="/" exact > <Redirect to="/home" /> </Route>
-        <Route path="/home" exact component={Home} /> 
+        <Route path="/home" exact component={Home} />
         <Route path="/embarcados" exact component={Embarcados} />
-        <Route path="/perfil" exact component={Perfil} />          
-      </Switch> 
+        <Route path="/perfil" exact component={Perfil} />
+      </Switch>
     </main>
   );
 }

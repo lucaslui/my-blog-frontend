@@ -1,16 +1,9 @@
-.home img{
-    background-attachment: scroll;
-    background-size: cover;
-    height: 36vh;
-    width: 100%;  
-}
-
 .home h3 {
     color: var(--disabled-color);
 }
 
 .home .posts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 32px;
 }
