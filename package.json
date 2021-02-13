@@ -1,6 +1,6 @@
 {
   "name": "my-blog",
-  "homepage": "https://lucaslui.github.io/my-blog-frontend/",
+  "homepage": "https://lucaslui.github.io/blog/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
