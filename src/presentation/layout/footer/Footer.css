@@ -1,6 +1,6 @@
 .footer {
-    grid-area: footer;    
-    color: var(--disabled-color);
-    text-align: center;
-    padding: 16px;
+  grid-area: footer;
+  color: var(--disabled-color);
+  text-align: center;
+  padding: 20px;
 }
