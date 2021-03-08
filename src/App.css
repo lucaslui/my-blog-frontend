@@ -26,7 +26,7 @@ body {
   grid-template-areas: 'sidebar header' 'sidebar content' 'sidebar footer';
 }
 
-@media only screen and (max-width: 1096px) {
+@media only screen and (max-width: 680px) {
   body {
     font-size: 15px;
   }

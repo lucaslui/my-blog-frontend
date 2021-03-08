@@ -1,48 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import './Sidebar.css'
 
 // import Profile from '../../assets/imgs/profile.png'
 
 export default function Sidebar(props) {
+
+  const [authorProfile, setAuthorProfile] = useState({
+    nickname: '',
+    occupation: '',
+    region: '',
+    about: '',
+    interests: '',
+    contact: '',
+    website: '',
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        'http://localhost:5050/api/users/603a537aa65a6932d7f7cf0e',
+      );
+      setAuthorProfile(result.data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <aside className={`sidebar ${props.sidebarOpened ? "open" : "closed"}`}>
       <button className="toggle" onClick={props.toggleSidebar}>
         <i className="fas fa-angle-double-left" />
       </button>
       <div className="profile">
-        <a href={process.env.PUBLIC_URL + '/perfil'}> 
-          <div className="profile-image"/> 
+        <a rel="author" href={process.env.PUBLIC_URL + '/perfil'}>
+          <div className="profile-image" />
         </a>
-        <span> Lucas Lui Motta </span>
-        <a href={process.env.PUBLIC_URL + '/perfil'}> Visitar Perfil </a>
+        <address className="author"> {authorProfile.nickname} </address> 
+        <a rel="author" href={process.env.PUBLIC_URL + '/perfil'}> Visitar Perfil </a>
       </div>
       <nav className="menu">
         <hr />
-        <span> Introdução </span>
+        <span> Nome </span>
         <ul>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Do que se trata? </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.occupation} </a> </li>
         </ul>
         <hr />
-        <span> Internet das Coisas </span>
+        <span> Sobre </span>
         <ul>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Arquiteturas </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.about} </a> </li>
         </ul>
         <hr />
         <span> Desenvolvimento de Sofware </span>
         <ul>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Arquitetura de Software </a> </li>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Linguagem Javascript e Python </a> </li>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Design de Software </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.interests} </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.contact} </a> </li>
+          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.website} </a> </li>
         </ul>
         <hr />
-        <span> Sistemas Embarcados </span>
-        <ul>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Hardware e Software </a> </li>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Linguagem C e C++ </a> </li>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Controlando Periféricos </a> </li>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> Processo de Depuração </a> </li>
-        </ul>
       </nav>
     </aside>
   )

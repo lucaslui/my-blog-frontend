@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import Home from '../../contents/home/Home'
-import Embarcados from '../../contents/embarcados/Embarcados';
-import Perfil from '../../contents/perfil/Perfil';
+import Article from '../../contents/article/Article';
+import Articles from '../../contents/articles/Articles';
+import Profile from '../../contents/profile/Profile';
+import Categories from '../../contents/categories/Category';
 
 import './Content.css'
 
@@ -11,10 +12,11 @@ export default function Content(props) {
   return (
     <main className="content">
       <Switch>
-        <Route path="/" exact > <Redirect to="/home" /> </Route>
-        <Route path="/home" exact component={Home} />
-        <Route path="/embarcados" exact component={Embarcados} />
-        <Route path="/perfil" exact component={Perfil} />
+        <Route path="/" exact > <Redirect to="/articles" /> </Route>
+        <Route path="/article" exact render={props => <Article {...props} />} />
+        <Route path="/articles" exact render={props => <Articles {...props} />} />
+        <Route path="/categories" exact render={props => <Categories {...props} />} />
+        <Route path="/profile" exact render={props => <Profile {...props} />} />
       </Switch>
     </main>
   );

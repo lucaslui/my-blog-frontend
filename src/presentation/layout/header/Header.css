@@ -13,7 +13,6 @@
   font-weight: 600;
   text-transform: uppercase;
   color: var(--primary-color);
-  margin-top: 20px;
   margin-bottom: 4px;
 }
 
@@ -22,42 +21,34 @@
   font-size: 1.26em;
   font-weight: 300;
   color: var(--disabled-color);
-  margin-top: 4px;
-  margin-bottom: 12px;
+  margin: 0
 }
 
 .header .navbar {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
+  font-size: 1.16em;
 }
 
 .header .navbar ul {
   list-style: none;
+  width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
 }
 
-.header .navbar li {
-  padding-right: 1em;
-}
-
-.header .navbar a {
+.header .navbar li a {
   display: block;
   color: var(--secondary-color);
   text-decoration: none;
   text-align: center;
+  padding: 15px 18px 15px 18px;
 }
 
-.header .navbar a:hover,
-.header .navbar a:active {
-  color: var(--primary-color);
-}
-
-.header .navbar .spacer {
-  flex: 1;
+.header .navbar .home a {
+  padding-left: 0px;
 }
 
 .header .navbar li button {
@@ -70,15 +61,26 @@
   color: var(--secondary-color);
 }
 
+.header .navbar li a:hover,
+.header .navbar li a:active {
+  color: var(--primary-color);
+  background-color: var(--enabled-color);
+}
+
+.header .navbar .spacer {
+  flex: 1;
+}
+
 .header .navbar .search {
   position: relative;
   padding-right: 20px;
+  padding-bottom: 4px;
 }
 
 .header .navbar .search i {
   position: absolute;
   left: 8px;
-  top: 6px;
+  top: 5px;
   color: var(--secondary-color);
 }
 
@@ -96,21 +98,51 @@
   box-shadow: none;
 }
 
-.header .navbar.mobile {
+.header .search-mobile {
   display: none;
 }
 
-@media only screen and (max-width: 1096px) {
-  .header {
-    padding: 20px;
+.header .search-mobile button{
+  padding: 10px;
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 680px) {
+  .header h1 {
+    padding-top: 10px;
+    padding-left: 20px;
   }
 
-  .header .navbar.desktop {
+  .header h2 {
+    padding-left: 20px;
+  }
+
+  .header .navbar {
+    font-size: 1em;
+  }
+
+  .header .navbar .home {
+    margin-left: 10px;
+  }
+
+  .header .navbar li a {
+    padding: 12px 10px 16px 10px;
+  }
+
+  .header .navbar .home a {
+    padding-left: 10px;
+  }
+
+  .header .navbar {
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  .header .search {
     display: none;
   }
 
-  .header .navbar.mobile {
+  .header .search-mobile {
     display: flex;
-    margin-bottom: 0;
   }
 }

@@ -1,0 +1,27 @@
+.pagination {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.pagination div {
+  color: var(--secondary-color);
+  float: left;
+  padding: 8px 16px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+/* Style the active/current link */
+.pagination div.active {
+  background-color: var(--primary-color);
+}
+
+/* Add a grey background color on mouse-over */
+.pagination div:not(.active) {
+  background-color: #333861;
+}
