@@ -4,12 +4,27 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  width: 100%;
+}
+
+.header .logo {
+  display: flex;
+}
+
+.header .logo .logo-image {
+  max-height: 100%;
+  width: clamp(72px, 1.5vw, 100%);
+  padding: 20px 14px 14px 0px;  
+}
+
+.header .logo .logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .header h1 {
   font-family: 'Indie Flower';
-  font-size: 1.38em;
+  font-size: clamp(14px, 1.5vw + 10px, 22px);
   font-weight: 600;
   text-transform: uppercase;
   color: var(--primary-color);
@@ -18,41 +33,30 @@
 
 .header h2 {
   font-family: 'Indie Flower';
-  font-size: 1.26em;
+  font-size: clamp(12px, 1vw + 8px, 22px);
   font-weight: 300;
   color: var(--disabled-color);
-  margin: 0
+  margin: 0;
 }
 
 .header .navbar {
   display: flex;
-  flex-direction: row;
-  font-size: 1.16em;
+  font-size: clamp(12px, 1vw + 8px, 20px);
 }
 
-.header .navbar ul {
-  list-style: none;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+.header .navbar {
   display: flex;
   align-items: center;
 }
 
-.header .navbar li a {
-  display: block;
+.header .navbar a {
   color: var(--secondary-color);
   text-decoration: none;
   text-align: center;
-  padding: 15px 18px 15px 18px;
+  padding: 12px 18px;
 }
 
-.header .navbar .home a {
-  padding-left: 0px;
-}
-
-.header .navbar li button {
-  display: block;
+.header .navbar button {
   font-size: 1em;
   border: none;
   outline: none;
@@ -61,10 +65,10 @@
   color: var(--secondary-color);
 }
 
-.header .navbar li a:hover,
-.header .navbar li a:active {
-  color: var(--primary-color);
-  background-color: var(--enabled-color);
+.header .navbar .selected {
+  background-color: var(--background-color);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 .header .navbar .spacer {
@@ -89,32 +93,22 @@
   border: none;
   border-radius: 10px;
   outline: none;
-  padding: 6px 2px 6px 32px;
+  padding: 6px 2px 6px 40px;
   color: var(--primary-color);
-}
-
-.header .navbar .search input:focus,
-.header .navbar .search input:active {
-  box-shadow: none;
 }
 
 .header .search-mobile {
   display: none;
 }
 
-.header .search-mobile button{
+.header .search-mobile button {
   padding: 10px;
   margin-left: 0;
 }
 
 @media only screen and (max-width: 680px) {
-  .header h1 {
-    padding-top: 10px;
-    padding-left: 20px;
-  }
-
-  .header h2 {
-    padding-left: 20px;
+  .header .logo {
+    margin-left: 20px;
   }
 
   .header .navbar {
@@ -123,10 +117,6 @@
 
   .header .navbar .home {
     margin-left: 10px;
-  }
-
-  .header .navbar li a {
-    padding: 12px 10px 16px 10px;
   }
 
   .header .navbar .home a {

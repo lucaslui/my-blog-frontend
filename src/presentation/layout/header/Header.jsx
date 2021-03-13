@@ -1,52 +1,49 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import "./Header.css";
 
 export default function Header(props) {
+
   return (
     <header className="header">
-      <h1> Espaço de Conhecimento em IoT </h1>
-      <h2>
-        Tendo como objetivo o ensino de Internet das Coisas de forma
-        simples, prática e objetiva.
-      </h2>
+      <div className="logo">
+        <img className="logo-image" src={require("../../assets/imgs/logo.svg")} alt="Logo" />
+        <div className="logo-text">
+          <h1> Espaço de Conhecimento em IoT </h1>
+          <h2>
+            Tendo como objetivo o ensino de Internet das Coisas de forma
+            simples, prática e objetiva.
+          </h2>
+        </div>
+      </div>
       <nav className="navbar">
-        <ul>
-          <li className="home">
-            <a href={process.env.PUBLIC_URL + '/articles'}>
-              <i className="fas fa-home" />
-              <span> Início </span>
-            </a>
-          </li>
-          <li>
-            <a href={process.env.PUBLIC_URL + '/categories'}>
-              <i className="fas fa-book" />
-              <span> Tutoriais </span>
-            </a>
-          </li>
-          <li>
-            <a href={process.env.PUBLIC_URL + '/projects'}>
-              <i className="fas fa-chart-bar" />
-              <span> Projetos </span>
-            </a>
-          </li>
-          <li>
-            <a href={process.env.PUBLIC_URL + '/projects'}>
-              <i className="fas fa-chart-bar" />
-              <span> Sobre </span>
-            </a>
-          </li>
-          <div className="spacer" />
-          <li className="search-mobile">
-            <button onClick={props.toggleSidebar}>
-              <i className="fas fa-search" />
-            </button>
-          </li>
-          <div className="search">
-            <i className="fas fa-search"></i>
-            <input type="search" id="header-search" name="search" />
-          </div>
-        </ul>
+        <NavLink to="/articles" activeClassName="selected">
+          <i className="fas fa-home"/>
+          <span> Início </span>
+        </NavLink>
+        <NavLink to="/categories" activeClassName="selected">
+          <i className="fas fa-book" />
+          <span> Tutoriais </span>
+        </NavLink>
+        <NavLink to="/projects" activeClassName="selected">
+          <i className="fas fa-chart-bar" />
+          <span> Projetos </span>
+        </NavLink>
+        <NavLink to="/projects" activeClassName="selected">
+          <i className="fas fa-chart-bar" />
+          <span> Sobre </span>
+        </NavLink>
+        <div className="search-mobile">
+          <button onClick={props.toggleSidebar}>
+            <i className="fas fa-search" />
+          </button>
+        </div>
+        <div className="spacer" />
+        <div className="search">
+          <i className="fas fa-search"></i>
+          <input type="search" id="header-search" name="search" />
+        </div>
       </nav>
     </header>
   );
