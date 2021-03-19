@@ -43,7 +43,11 @@ export default function Header(props) {
         <div className="search">
           <i className="fas fa-search"></i>
           <input type="search" id="header-search" name="search" />
+          <button onClick={props.toggleSidebar}>
+            Procurar
+          </button>
         </div>
+
       </nav>
     </header>
   );

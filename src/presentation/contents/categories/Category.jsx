@@ -19,7 +19,7 @@ export default function Category() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'http://localhost:5050/api/categories?page=1&categoryParentId=603bb03cf134dd2ce7d4f64b',
+        `${process.env.PUBLIC_URL}/api/categories?page=1&categoryParentId=603bb03cf134dd2ce7d4f64b`,
       );
       setCategories(result.data);
     };

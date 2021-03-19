@@ -97,6 +97,14 @@
   color: var(--primary-color);
 }
 
+.header .navbar .search button {
+  background-color: var(--background-color);
+  border-color: var(--primary-color);
+  border-radius: 10px;
+  color: var(--primary-color);
+}
+
+
 .header .search-mobile {
   display: none;
 }

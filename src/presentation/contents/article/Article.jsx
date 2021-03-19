@@ -17,7 +17,7 @@ export default function Article() {
     console.log(location)
     const fetchData = async () => {
       const result = await axios(
-        `http://localhost:5050/api/articles${location.search}`,
+        `${process.env.PUBLIC_URL}/api/articles${location.search}`,
       );
       setArticles(result.data);
     };

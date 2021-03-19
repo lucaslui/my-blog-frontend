@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'http://localhost:5050/api/articles?page=1',
+        `${process.env.PUBLIC_URL}/api/articles?page=1`,
       );
       setArticles(result.data);
     };

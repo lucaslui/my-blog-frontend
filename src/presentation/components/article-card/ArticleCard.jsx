@@ -19,7 +19,7 @@ export default function ArticleCard(props) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `http://localhost:5050/api/users/${props.userId}`,
+        `${process.env.PUBLIC_URL}/api/users/${props.userId}`,
       );
       setProfile(result.data);
     };

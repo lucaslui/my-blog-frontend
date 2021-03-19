@@ -31,7 +31,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       const result = await axios(
-        'http://localhost:5050/api/users/603a537aa65a6932d7f7cf0e',
+        `${process.env.PUBLIC_URL}/api/users/603a537aa65a6932d7f7cf0e`,
       );
       setProfile(result.data);
     };
@@ -41,7 +41,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchArticles = async () => {
       const result = await axios(
-        'http://localhost:5050/api/articles?userId=603a537aa65a6932d7f7cf0e',
+        `${process.env.PUBLIC_URL}/api/articles?userId=603a537aa65a6932d7f7cf0e`,
       );
       setArticles(result.data);
     };

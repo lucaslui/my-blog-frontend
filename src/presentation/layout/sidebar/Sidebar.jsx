@@ -20,7 +20,7 @@ export default function Sidebar(props) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'http://localhost:5050/api/users/603a537aa65a6932d7f7cf0e',
+        process.env.PUBLIC_URL + '/api/users/603a537aa65a6932d7f7cf0e',
       );
       setAuthorProfile(result.data);
     };
