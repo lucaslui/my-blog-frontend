@@ -23,5 +23,5 @@
 
 /* Add a grey background color on mouse-over */
 .pagination div:not(.active) {
-  background-color: #333861;
+  background-color: #003c8a;
 }

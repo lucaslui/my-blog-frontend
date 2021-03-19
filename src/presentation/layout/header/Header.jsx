@@ -19,35 +19,33 @@ export default function Header(props) {
       </div>
       <nav className="navbar">
         <NavLink to="/articles" activeClassName="selected">
-          <i className="fas fa-home"/>
+          <i className="fas fa-home" />
           <span> Início </span>
         </NavLink>
         <NavLink to="/categories" activeClassName="selected">
           <i className="fas fa-book" />
-          <span> Tutoriais </span>
+          <span> Categorias </span>
         </NavLink>
         <NavLink to="/projects" activeClassName="selected">
           <i className="fas fa-chart-bar" />
           <span> Projetos </span>
         </NavLink>
-        <NavLink to="/projects" activeClassName="selected">
-          <i className="fas fa-chart-bar" />
-          <span> Sobre </span>
-        </NavLink>
-        <div className="search-mobile">
+        <div className={`about-mobile ${props.sidebarOpened ? 'selected':''}`}>
           <button onClick={props.toggleSidebar}>
-            <i className="fas fa-search" />
+            <i className="fas fa-question-circle" />
+            <span> Sobre </span>
           </button>
         </div>
         <div className="spacer" />
+        <div className="search-mobile">
+          <button>
+            <i className="fas fa-search" />
+          </button>
+        </div>
         <div className="search">
           <i className="fas fa-search"></i>
           <input type="search" id="header-search" name="search" />
-          <button onClick={props.toggleSidebar}>
-            Procurar
-          </button>
         </div>
-
       </nav>
     </header>
   );
