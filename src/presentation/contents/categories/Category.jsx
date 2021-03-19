@@ -6,6 +6,7 @@ import './Category.css'
 
 import PageTitle from '../../components/page-title/PageTitle'
 import CategoryCard from '../../components/category-card/CategoryCard'
+import env from '../../config/env'
 
 export default function Category() {
 
@@ -19,7 +20,7 @@ export default function Category() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `${process.env.PUBLIC_URL}/api/categories?page=1&categoryParentId=603bb03cf134dd2ce7d4f64b`,
+        `${env.api}/api/categories?page=1&categoryParentId=603bb03cf134dd2ce7d4f64b`,
       );
       setCategories(result.data);
     };

@@ -7,6 +7,7 @@ import './Home.css'
 
 import PageTitle from '../../components/page-title/PageTitle'
 import ArticleCard from '../../components/article-card/ArticleCard'
+import env from '../../config/env'
 
 export default function Home() {
 
@@ -24,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `${process.env.PUBLIC_URL}/api/articles?page=1`,
+        `${env.api}/api/articles?page=1`,
       );
       setArticles(result.data);
     };

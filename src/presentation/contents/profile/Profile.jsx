@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import PageTitle from '../../components/page-title/PageTitle'
 
+import env from '../../config/env'
 import './Profile.css'
 
 export default function Profile() {
@@ -31,7 +32,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       const result = await axios(
-        `${process.env.PUBLIC_URL}/api/users/603a537aa65a6932d7f7cf0e`,
+        `${env.api}/api/users/603a537aa65a6932d7f7cf0e`,
       );
       setProfile(result.data);
     };
@@ -41,7 +42,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchArticles = async () => {
       const result = await axios(
-        `${process.env.PUBLIC_URL}/api/articles?userId=603a537aa65a6932d7f7cf0e`,
+        `${env.api}/api/articles?userId=603a537aa65a6932d7f7cf0e`,
       );
       setArticles(result.data);
     };

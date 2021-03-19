@@ -8,6 +8,7 @@ import './Articles.css'
 import Pagination from '../../components/pagination/Pagination'
 import PageTitle from '../../components/page-title/PageTitle'
 import ArticleCard from '../../components/article-card/ArticleCard'
+import env from '../../config/env'
 
 export default function Articles() {
 
@@ -28,7 +29,7 @@ export default function Articles() {
     console.log(location)
     const fetchData = async () => {
       const result = await axios(
-        `${process.env.PUBLIC_URL}/api/articles${location.search}`,
+        `${env.api}/api/articles${location.search}`,
       );
       setArticles(result.data);
     };
