@@ -8,7 +8,6 @@ import './Articles.css'
 import Pagination from '../../components/pagination/Pagination'
 import PageTitle from '../../components/page-title/PageTitle'
 import ArticleCard from '../../components/article-card/ArticleCard'
-import env from '../../config/env'
 
 export default function Articles() {
 
@@ -29,7 +28,7 @@ export default function Articles() {
     console.log(location)
     const fetchData = async () => {
       const result = await axios(
-        `${env.api}/api/articles${location.search}`,
+        `https://espaco-de-conhecimento-backend.herokuapp.com/api/articles${location.search}`,
       );
       setArticles(result.data);
     };

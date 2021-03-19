@@ -4,7 +4,6 @@ import axios from 'axios';
 import './Sidebar.css'
 
 // import Profile from '../../assets/imgs/profile.png'
-import env from '../../config/env'
 
 export default function Sidebar(props) {
 
@@ -21,7 +20,7 @@ export default function Sidebar(props) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        env.api + '/api/users/603a537aa65a6932d7f7cf0e',
+        'https://espaco-de-conhecimento-backend.herokuapp.com/api/users/603a537aa65a6932d7f7cf0e',
       );
       setAuthorProfile(result.data);
     };

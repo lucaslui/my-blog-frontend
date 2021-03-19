@@ -7,7 +7,6 @@ import './Home.css'
 
 import PageTitle from '../../components/page-title/PageTitle'
 import ArticleCard from '../../components/article-card/ArticleCard'
-import env from '../../config/env'
 
 export default function Home() {
 
@@ -25,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `${env.api}/api/articles?page=1`,
+        'https://espaco-de-conhecimento-backend.herokuapp.com/api/articles?page=1',
       );
       setArticles(result.data);
     };
