@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
 
-import './Sidebar.css'
+import SubMenu from "./SubMenu";
 
-// import Profile from '../../assets/imgs/profile.png'
+import './Sidebar.css'
 
 export default function Sidebar(props) {
 
@@ -27,8 +28,27 @@ export default function Sidebar(props) {
     fetchData();
   }, []);
 
+
+  const [categories, setCategories] = useState([{
+    id: "",
+    name: "",
+    description: "",
+    imageUrl: ""
+  }]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        'https://espaco-de-conhecimento-backend.herokuapp.com/api/categories/tree',
+      );
+      setCategories(result.data);
+    };
+    fetchData();
+  }, []);
+
+
   return (
-    <aside className={`sidebar ${props.sidebarOpened ? "open" : "closed"}`}>
+    <div className={`sidebar ${props.sidebarOpened ? "open" : "closed"}`}>
       <button className="toggle" onClick={props.toggleSidebar}>
         <i className="fas fa-angle-double-left" />
       </button>
@@ -36,29 +56,19 @@ export default function Sidebar(props) {
         <a rel="author" href={process.env.PUBLIC_URL + '/perfil'}>
           <div className="profile-image" />
         </a>
-        <address className="author"> {authorProfile.nickname} </address> 
+        <address className="author"> {authorProfile.nickname} </address>
         <a rel="author" href={process.env.PUBLIC_URL + '/perfil'}> Visitar Perfil </a>
       </div>
       <nav className="menu">
         <hr />
-        <span> Nome </span>
-        <ul>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.occupation} </a> </li>
-        </ul>
-        <hr />
-        <span> Sobre </span>
-        <ul>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.about} </a> </li>
-        </ul>
-        <hr />
-        <span> Desenvolvimento de Sofware </span>
-        <ul>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.interests} </a> </li>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.contact} </a> </li>
-          <li> <a href={process.env.PUBLIC_URL + '/embarcados'}> {authorProfile.website} </a> </li>
-        </ul>
-        <hr />
+        {
+          categories.map((category, index) => {
+            return (
+                <SubMenu category={category} key={index} />
+            );
+          })
+        }
       </nav>
-    </aside>
+    </div >
   )
 }

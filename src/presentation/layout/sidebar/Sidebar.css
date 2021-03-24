@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 10px;
+  height: 100%;
 }
 
 .sidebar .toggle {
@@ -26,8 +26,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 36px;
-  margin-bottom: 20px;
+  margin-top: 42px;
+  margin-bottom: 42px;
 }
 
 .sidebar .profile .profile-image {
@@ -42,6 +42,7 @@
 
 .sidebar .profile address {
   margin-bottom: 10px;
+  font-size: clamp(12px, 1vw + 8px, 20px);
 }
 
 .sidebar .profile a {
@@ -65,25 +66,33 @@
   );
 }
 
-.sidebar .menu ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.sidebar .menu li {
-  line-height: 36px;
-  vertical-align: center;
-}
-
-.sidebar .menu li:hover {
-  background-color: var(--enabled-color);
-}
-
-.sidebar .menu a {
+.sidebar .sidebar-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: var(--secondary-color);
-  display: block;
+  padding: 20px;
   text-decoration: none;
-  text-align: left;
+  font-size: clamp(12px, 1vw + 8px, 20px);
+}
+
+.sidebar .sidebar-link:hover {
+  background: var(--background-color);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.sidebar .dropdown-link {
+  height: 42px;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: clamp(12px, 1vw + 8px, 18px);
+}
+
+.sidebar .dropdown-link:hover {
+  background: var(--background-color);
 }
 
 @media only screen and (max-width: 680px) {

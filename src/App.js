@@ -18,7 +18,7 @@ export default function App() {
     <div className="container">
       <Header toggleSidebar={toggleSidebar} sidebarOpened={sidebarOpened} />
       <Sidebar toggleSidebar={toggleSidebar} sidebarOpened={sidebarOpened} />
-      <Content />
+      <Content/>
       <Footer />
     </div>
   );

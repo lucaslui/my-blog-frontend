@@ -1,5 +1,0 @@
-.tutorial .categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
-  grid-gap: 32px;
-}

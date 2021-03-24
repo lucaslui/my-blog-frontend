@@ -1,10 +1,10 @@
-.articles-grid {
+.categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
   grid-gap: 32px;
 }
 
-.articles-grid a {
+.categories-grid a {
   text-decoration: none;
   color: var(--primary-color);
 }

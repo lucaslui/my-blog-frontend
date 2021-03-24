@@ -7,8 +7,7 @@
 }
 
 .article-card:hover {
-  box-shadow: 0 4px 8px 0 rgba(46, 44, 158, 0.623),
-    0 6px 20px 0 rgba(27, 37, 129, 0.19);
+  box-shadow: 0 4px 8px 0 var(--secondary-color);
   transform: translatey(-8px) !important;
 }
 

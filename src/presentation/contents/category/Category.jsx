@@ -3,11 +3,11 @@ import { useLocation } from "react-router-dom";
 
 import axios from 'axios'
 
-import './Article.css'
+import './Category.css'
 
 import PageTitle from '../../components/page-title/PageTitle'
 
-export default function Article() {
+export default function Category() {
 
   const [articles, setArticles] = useState([{}]);
 
@@ -17,7 +17,7 @@ export default function Article() {
     console.log(location)
     const fetchData = async () => {
       const result = await axios(
-        `https://espaco-de-conhecimento-backend.herokuapp.com/api/articles${location.search}`,
+        `https://espaco-de-conhecimento-backend.herokuapp.com/api/categories${location.search}`,
       );
       setArticles(result.data);
     };

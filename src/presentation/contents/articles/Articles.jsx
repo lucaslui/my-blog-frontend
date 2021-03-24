@@ -5,8 +5,8 @@ import axios from 'axios'
 
 import './Articles.css'
 
-import Pagination from '../../components/pagination/Pagination'
 import PageTitle from '../../components/page-title/PageTitle'
+import Pagination from '../../components/pagination/Pagination'
 import ArticleCard from '../../components/article-card/ArticleCard'
 
 export default function Articles() {
@@ -25,7 +25,6 @@ export default function Articles() {
   let location = useLocation();
 
   useEffect(() => {
-    console.log(location)
     const fetchData = async () => {
       const result = await axios(
         `https://espaco-de-conhecimento-backend.herokuapp.com/api/articles${location.search}`,
@@ -36,14 +35,10 @@ export default function Articles() {
   }, [location]);
 
   return (
-    <div className="articles-grid">
-      <PageTitle title="Página Inicial" subtitle="Bem vindo!"></PageTitle>
-      <Pagination
-        itemsCount={articles.length}
-        pageSize={2}
-        currentPage={1}
-      />
-      <div className="posts">
+    <>
+      <PageTitle title="Página Inicial" subtitle="Bem vindo!"/>
+      <Pagination itemsCount={articles.length} pageSize={2} currentPage={1} />
+      <div className="articles-grid">
         {
           articles.map(article => {
             return (
@@ -61,6 +56,6 @@ export default function Articles() {
           })
         }
       </div>
-    </div >
+    </>
   )
 }
