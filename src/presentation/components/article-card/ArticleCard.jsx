@@ -19,12 +19,12 @@ export default function ArticleCard(props) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `${process.env.PUBLIC_URL}/api/users/${props.userId}`,
+        `https://espaco-de-conhecimento-backend.herokuapp.com/api/users/603a537aa65a6932d7f7cf0e`,
       );
       setProfile(result.data);
     };
     fetchData();
-  }, [props.userId]);
+  }, []);
 
   const getDateFormat = (date) => {
     const ISODate = new Date(date);

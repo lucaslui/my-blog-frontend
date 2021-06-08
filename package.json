@@ -1,8 +1,8 @@
 {
   "name": "my-blog",
-  "homepage": "https://lucaslui.github.io/blog/",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lucaslui.github.io/my-blog-frontend/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && cp build/index.html build/404.html",

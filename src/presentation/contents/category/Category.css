@@ -1,9 +1,0 @@
-.article h3 {
-  color: var(--disabled-color);
-}
-
-.article .posts {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
-grid-gap: 32px;
-}

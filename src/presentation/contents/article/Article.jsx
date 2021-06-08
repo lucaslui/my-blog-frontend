@@ -14,7 +14,6 @@ export default function Article() {
   let location = useLocation();
 
   useEffect(() => {
-    console.log(location)
     const fetchData = async () => {
       const result = await axios(
         `https://espaco-de-conhecimento-backend.herokuapp.com/api/articles${location.search}`,
